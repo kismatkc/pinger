@@ -1,0 +1,12 @@
+name: Ping Replit
+
+on:
+  schedule:
+    - cron: '*/1 * * * *'  # Runs every minute
+
+jobs:
+  ping:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Send HTTP request to keep Replit awake
+        run: curl -I https://6c5face4-f39a-4b9f-ae3a-688bd9d91265-00-1eff5zyueznk1.riker.replit.dev/
